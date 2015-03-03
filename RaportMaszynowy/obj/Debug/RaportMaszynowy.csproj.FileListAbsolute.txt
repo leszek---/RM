@@ -4,3 +4,9 @@ c:\users\leszek\documents\visual studio 2013\Projects\RaportMaszynowy\RaportMasz
 c:\users\leszek\documents\visual studio 2013\Projects\RaportMaszynowy\RaportMaszynowy\obj\Debug\RaportMaszynowy.csprojResolveAssemblyReference.cache
 c:\users\leszek\documents\visual studio 2013\Projects\RaportMaszynowy\RaportMaszynowy\obj\Debug\RaportMaszynowy.dll
 c:\users\leszek\documents\visual studio 2013\Projects\RaportMaszynowy\RaportMaszynowy\obj\Debug\RaportMaszynowy.pdb
+C:\Users\mczetyrbok\Documents\RM\RaportMaszynowy\bin\RaportMaszynowy.dll.config
+C:\Users\mczetyrbok\Documents\RM\RaportMaszynowy\bin\RaportMaszynowy.dll
+C:\Users\mczetyrbok\Documents\RM\RaportMaszynowy\bin\RaportMaszynowy.pdb
+C:\Users\mczetyrbok\Documents\RM\RaportMaszynowy\obj\Debug\RaportMaszynowy.csprojResolveAssemblyReference.cache
+C:\Users\mczetyrbok\Documents\RM\RaportMaszynowy\obj\Debug\RaportMaszynowy.dll
+C:\Users\mczetyrbok\Documents\RM\RaportMaszynowy\obj\Debug\RaportMaszynowy.pdb
