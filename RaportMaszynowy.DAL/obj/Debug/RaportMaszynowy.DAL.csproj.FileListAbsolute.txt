@@ -1,0 +1,6 @@
+C:\Users\Leszek\Documents\RM\RaportMaszynowy.DAL\bin\Debug\RaportMaszynowy.DAL.exe.config
+C:\Users\Leszek\Documents\RM\RaportMaszynowy.DAL\bin\Debug\RaportMaszynowy.DAL.exe
+C:\Users\Leszek\Documents\RM\RaportMaszynowy.DAL\bin\Debug\RaportMaszynowy.DAL.pdb
+C:\Users\Leszek\Documents\RM\RaportMaszynowy.DAL\obj\Debug\RaportMaszynowy.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Leszek\Documents\RM\RaportMaszynowy.DAL\obj\Debug\RaportMaszynowy.DAL.exe
+C:\Users\Leszek\Documents\RM\RaportMaszynowy.DAL\obj\Debug\RaportMaszynowy.DAL.pdb

@@ -1,0 +1,6 @@
+C:\Users\Leszek\Documents\RM\RaportMaszynowy.Console\bin\Debug\RaportMaszynowy.Console.exe.config
+C:\Users\Leszek\Documents\RM\RaportMaszynowy.Console\bin\Debug\RaportMaszynowy.Console.exe
+C:\Users\Leszek\Documents\RM\RaportMaszynowy.Console\bin\Debug\RaportMaszynowy.Console.pdb
+C:\Users\Leszek\Documents\RM\RaportMaszynowy.Console\obj\Debug\RaportMaszynowy.Console.csprojResolveAssemblyReference.cache
+C:\Users\Leszek\Documents\RM\RaportMaszynowy.Console\obj\Debug\RaportMaszynowy.Console.exe
+C:\Users\Leszek\Documents\RM\RaportMaszynowy.Console\obj\Debug\RaportMaszynowy.Console.pdb
