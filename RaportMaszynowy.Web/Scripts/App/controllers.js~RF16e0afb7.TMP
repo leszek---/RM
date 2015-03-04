@@ -1,0 +1,10 @@
+﻿angular.module('app.controllers', [])
+
+    .controller('ItemController', ['$scope', '$location', '$window' ,'$http', function ($scope, $location, $window) {
+
+
+    $scope.item = [];
+
+
+    alert("dziala");
+}])

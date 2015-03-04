@@ -175,3 +175,4 @@ C:\Users\Leszek\Documents\RM\RaportMaszynowy.Web\bin\Microsoft.Owin.Security.Goo
 C:\Users\Leszek\Documents\RM\RaportMaszynowy.Web\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Leszek\Documents\RM\RaportMaszynowy.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Leszek\Documents\RM\RaportMaszynowy.Web\obj\Debug\RaportMaszynowy.Web.pdb
+C:\Users\mczetyrbok\Documents\RM\RaportMaszynowy.Web\bin\FizzWare.NBuilder.dll

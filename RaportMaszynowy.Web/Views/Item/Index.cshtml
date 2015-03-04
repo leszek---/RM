@@ -1,21 +1,21 @@
 ﻿
-<div  ng-controller="ItemController"></div>
-@{
-    ViewBag.Title = "Index";
-}
+<div ng-controller="ItemController">
+    @{
+        ViewBag.Title = "Index";
+    }
+    
+    <h2>Tutaj będzie się coś wyświetlało</h2>
 
-<h2>Tutaj będzie się coś wyświetlało</h2>
-
-<ul>
-    <li ng-repeat="item in items">
-        <span>{{phone.name}}</span>
-        <p>{{phone.snippet}}</p>
-    </li>
-</ul>
-
-
+    <ul>
+        <li ng-repeat="item in items">
+            <span>{{item.name}}</span>
+            <p>{{item.snippet}}</p>
+        </li>
+    </ul>
 
 
+
+</div>
 @section Scripts {
 
     <script>

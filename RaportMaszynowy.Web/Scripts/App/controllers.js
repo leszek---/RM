@@ -1,10 +1,19 @@
 ﻿angular.module('app.controllers', [])
 
-    .controller('ItemController', ['$scope', '$location', '$window', function ($scope, $location, $window) {
+    .controller('ItemController', ['$scope', '$location', '$window', '$http', function ($scope, $location, $window, $http) {
+        var apiurl = "api/Item/get";
+        init(apiurl);
+        $scope.items = [];
+
+        $scope.init = false;
 
 
-    $scope.item = [];
+        function init(apiurl) {
 
 
-    alert("dziala");
-}])
+            return $http.get(apiurl);
+
+
+
+        }
+    }])
