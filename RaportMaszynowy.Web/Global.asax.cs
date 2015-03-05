@@ -11,6 +11,9 @@ namespace RaportMaszynowy.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+
+        public static bool MashineStatus { get; set;  }
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();

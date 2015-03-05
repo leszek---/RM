@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RaportMaszynowy.DAL
+namespace RaportMaszynowy.Contract.cs
 {
-    class Program
+    class TaskDTO
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }

@@ -1,0 +1,4 @@
+1 zmienic Nazwe projektu na  dal na domain 
+dodac encje settings id - int , isActice - bool , Conent - string
+uzupelnic kontroller ImtemSettings 
+uzupelnic Konteoller ItemSettingsApi
