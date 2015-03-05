@@ -178,8 +178,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\MachineStatusApiController.cs" />
+    <Compile Include="Controllers\Api\ItemSettingsApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Api\ItemApiController.cs" />
+    <Compile Include="Controllers\MachineErrorsController.cs" />
+    <Compile Include="Controllers\ItemSettingsController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
