@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaportMaszynowy.Web", "Rapo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaportMaszynowy.Console", "RaportMaszynowy.Console\RaportMaszynowy.Console.csproj", "{691B4E35-ECB4-4BAF-B3C7-649AE7B2E0E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaportMaszynowy.DAL", "RaportMaszynowy.DAL\RaportMaszynowy.DAL.csproj", "{D746DF80-34AF-4419-8A24-5329A3132944}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DCF8ED00-549A-480E-8222-9DC7330052C3}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -22,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaportMaszynowy.Machine", "RaportMaszynowy.Machine\RaportMaszynowy.Machine.csproj", "{9A0701BF-7E47-4D31-B6BD-B60A66C37A9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaportManager.Domian", "RaportManager.Domian\RaportManager.Domian.csproj", "{D9F014D6-BCD2-4A85-A16E-1510E19014F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,14 +37,14 @@ Global
 		{691B4E35-ECB4-4BAF-B3C7-649AE7B2E0E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{691B4E35-ECB4-4BAF-B3C7-649AE7B2E0E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{691B4E35-ECB4-4BAF-B3C7-649AE7B2E0E7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D746DF80-34AF-4419-8A24-5329A3132944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D746DF80-34AF-4419-8A24-5329A3132944}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D746DF80-34AF-4419-8A24-5329A3132944}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D746DF80-34AF-4419-8A24-5329A3132944}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9A0701BF-7E47-4D31-B6BD-B60A66C37A9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9A0701BF-7E47-4D31-B6BD-B60A66C37A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A0701BF-7E47-4D31-B6BD-B60A66C37A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A0701BF-7E47-4D31-B6BD-B60A66C37A9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9F014D6-BCD2-4A85-A16E-1510E19014F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9F014D6-BCD2-4A85-A16E-1510E19014F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9F014D6-BCD2-4A85-A16E-1510E19014F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9F014D6-BCD2-4A85-A16E-1510E19014F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
