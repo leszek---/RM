@@ -1,4 +1,9 @@
-1 zmienic Nazwe projektu na  dal na domain 
-dodac encje settings id - int , isActice - bool , Conent - string
+
+dodac do encji item - pole shift - int 
+dodac encje settings id - int , isActice - bool , Content - string
+dodac encje MachineError id - int , Date - date , Description - string
+uzupelnic kontroller MachineStatusApiController
+uzupelnic kontroller MachineErrorsController
 uzupelnic kontroller ImtemSettings 
 uzupelnic Konteoller ItemSettingsApi
+

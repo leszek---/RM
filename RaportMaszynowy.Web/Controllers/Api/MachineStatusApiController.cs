@@ -14,11 +14,18 @@ namespace RaportMaszynowy.Web.Controllers.Api
             return status; 
         }
 
-
+        //TODO
         public bool SetMachineStatus(bool value)
         {
             MvcApplication.MashineStatus = value;
+            //jesli wartos byla ujemna zapisz to w bazie 
+            ReportError();
             return value;
+        }
+
+        private void ReportError()
+        {
+            
         }
 
 
