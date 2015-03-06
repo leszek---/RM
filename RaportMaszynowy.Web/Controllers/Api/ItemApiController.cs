@@ -1,13 +1,17 @@
-﻿using RaportManager.Domian;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
+using FizzWare.NBuilder;
+using RaportManager.Domian;
 
 namespace RaportMaszynowy.Web.Controllers.Api
 {
     public class ItemApiController : ApiController
     {
+
         public IEnumerable<Item> Get(DateTime? lastData)
         {
             using (var context = new Model1())
@@ -24,22 +28,16 @@ namespace RaportMaszynowy.Web.Controllers.Api
             }
         }
 
-        public bool ChangeStatus(int id, bool status)
+        public bool ChangeStatus(int id, bool statu)
         {
+            using (var context = new Model1())
+            {
 
-            Model1 db = new Model1();
-            Item item = db.Item.Find(id);
-            item.Status = status;
-            db.SaveChanges();
-
-            // znajdziesz item 
-            //zmnienisz status 
-            // zapiszesz 
-            // ZROBIONE
+                var dbitem = context.Item.SingleOrDefault(x => x.ItemID == id);
 
                 if (dbitem != null)
                 {
-                    dbitem.Status = status;
+                    dbitem.Status = statu;
                 }
 
                 context.SaveChanges();
