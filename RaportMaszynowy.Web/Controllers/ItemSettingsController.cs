@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RaportManager.Domian;
+using WebGrease.Css.Extensions;
 
 namespace RaportMaszynowy.Web.Controllers
 {
@@ -31,7 +33,24 @@ namespace RaportMaszynowy.Web.Controllers
         /// <returns></returns>
         public ActionResult SetActive(int id)
         {
-            throw  new NotImplementedException();
+            using (var context = new Model1())
+            {
+                using (var dbContextTransaction = context.Database.BeginTransaction())
+                {
+                    var dbActiveItems = context.Settings.Where(x => x.isActive);
+                    dbActiveItems.ForEach(x => x.isActive = false);
+
+                    var dbItem = context.Settings.SingleOrDefault(x => x.ItemID == id);
+                    if (dbItem != null)
+                    {
+                        dbItem.isActive = true;
+                    }
+                    context.SaveChanges();
+                }
+            }
+
+            return RedirectToAction("Details", id);
+
         }
 
         // GET: Item/Create
