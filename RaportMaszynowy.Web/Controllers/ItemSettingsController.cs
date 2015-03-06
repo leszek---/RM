@@ -10,7 +10,7 @@ using System.Data.Entity;
 
 namespace RaportMaszynowy.Web.Controllers
 {
-    public class ItemSettignsController : Controller
+    public class ItemSettingsController : Controller
     {
 
         private Model1 db = new Model1();
