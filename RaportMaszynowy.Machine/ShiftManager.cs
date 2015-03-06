@@ -11,7 +11,7 @@ namespace RaportMaszynowy.Machine
         /// <returns></returns>
         public int GetShiftNumber()
         {
-            // use DateTime.Now
+            throw new NotImplementedException();
         }
     }
 }

@@ -34,10 +34,10 @@ namespace RaportMaszynowy.Machine
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            // tworzysz item 
-            // ustawiasz mu settings 
-            var task = new 
-            ApiManager.GetTaskSettings()
+            //// tworzysz item 
+            //// ustawiasz mu settings 
+            //var task = new 
+            //ApiManager.GetTaskSettings()
         }
     };
 }
