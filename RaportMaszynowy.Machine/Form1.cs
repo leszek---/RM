@@ -26,11 +26,13 @@ namespace RaportMaszynowy.Machine
 
         private void button1_Click(object sender, EventArgs e)
         {
+            textBox1.Text += @"Maszyna - Start";
             timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            textBox1.Text += @"Maszyna - Nowa sztuka";
             var item = new Item();
             item.DateCreated = DateTime.Now;
             item.Settings.Add(Settings);
@@ -40,11 +42,13 @@ namespace RaportMaszynowy.Machine
 
         private void button2_Click(object sender, EventArgs e)
         {
+            textBox1.Text += @"Maszyna - Stop";
             timer1.Stop();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            textBox1.Text += @"Maszyna - Wystąpił bład";
             ApiManager.ReportError();
         }
     };

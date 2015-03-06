@@ -10,7 +10,7 @@ namespace RaportMaszynowy.Web.Controllers.Api
         {
             using (var context = new Model1())
             {
-                var dbItem = context.Settings.SingleOrDefault(x => x.isActive == true);
+                var dbItem = context.Settings.SingleOrDefault(x => x.isActive);
                 return dbItem;
             }
         }
