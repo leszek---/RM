@@ -11,7 +11,19 @@ namespace RaportMaszynowy.Machine
         /// <returns></returns>
         public int GetShiftNumber()
         {
-            throw new NotImplementedException();
+            DateTime dateNow = DateTime.Now;
+            DateTime hour6 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 6, 0, 0);
+            DateTime hour14 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 14, 0, 0);
+            DateTime hour22 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 22, 0, 0);
+            
+            if(dateNow > hour6 & dateNow <= hour14 )
+                return 1;
+            if (dateNow > hour14 & dateNow <= hour22)
+                return 2;
+            if (dateNow > hour22 || dateNow <= hour6)
+                return 3;
+            else
+                return 0;
         }
     }
 }

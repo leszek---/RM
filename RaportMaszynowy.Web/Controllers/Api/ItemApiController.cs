@@ -24,11 +24,18 @@ namespace RaportMaszynowy.Web.Controllers.Api
             return new List<Item>();
         }
 
-        public bool ChangeStatus(int id, bool statu)
+        public bool ChangeStatus(int id, bool status)
         {
+
+            Model1 db = new Model1();
+            Item item = db.Item.Find(id);
+            item.Status = status;
+            db.SaveChanges();
+
             // znajdziesz item 
             //zmnienisz status 
             // zapiszesz 
+            // ZROBIONE
 
             return true; 
 
