@@ -1,57 +1,38 @@
-﻿using System;
-using System.Security.Policy;
+﻿using RaportManager.Domian;
+using System;
 using System.Net.Http;
-using RaportManager.Domian;
-using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 
 namespace RaportMaszynowy.Machine
 {
     public class ApiManager
     {
-        HttpClient client = new HttpClient();
+        private HttpClient _client;
         public string Url = "http://localhost:61471/";
-        
 
-        public void  SendItem(Item item)
+        public ApiManager()
         {
-            client.BaseAddress = new Uri(Url);
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.PostAsJsonAsync("api/ItemApi", item);
-            
+            _client = new HttpClient { BaseAddress = new Uri(Url) };
+            _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public bool SendMachineStatus(MachineError error)
+        public void SendItem(Item item)
         {
-            client.BaseAddress = new Uri(Url);
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage response = client.PostAsJsonAsync("api/ItemApi", error.Description).Result;
-            if (response.IsSuccessStatusCode)
-                return true;
-            else
-                return false;
+            var response = _client.PostAsJsonAsync("api/ItemApi", item).Result;
+            response.EnsureSuccessStatusCode();
         }
 
-        public bool GetTaskSettings(int id)
+        public void ReportError()
         {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(Url);
-            string API = String.Concat("api/ItemApi/", id);
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage response = client.GetAsync(API).Result;
-            
-            
-
-            if (response.IsSuccessStatusCode)
-            {
-                Item item = response.Content.ReadAsAsync<Item>().Result;
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            HttpResponseMessage response = _client.GetAsync("api/MachineStatusApiController").Result;
+            response.EnsureSuccessStatusCode();
         }
 
+        public Settings GetTaskSettings()
+        {
+            var response = _client.GetAsync("api/ItemSettingsApi/GetActive").Result;
+            Settings settings = response.Content.ReadAsAsync<Settings>().Result;
+            return settings;
+        }
     }
 }
