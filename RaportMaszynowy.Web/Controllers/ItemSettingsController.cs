@@ -5,24 +5,33 @@ using System.Web;
 using System.Web.Mvc;
 using RaportManager.Domian;
 using WebGrease.Css.Extensions;
+using System.Net;
+using System.Data.Entity;
 
 namespace RaportMaszynowy.Web.Controllers
 {
     public class ItemSettignsController : Controller
     {
 
-     
+        private Model1 db = new Model1();
 
-        // GET: Item
         public ActionResult Index()
         {
-            return View();
+            return View(db.Settings.ToList());
         }
 
-        // GET: Item/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+             Settings setting = db.Settings.Find(id);
+            if (setting == null)
+            {
+                return HttpNotFound();
+            }
+            return View(setting);
         }
 
         /// <summary>
@@ -53,70 +62,83 @@ namespace RaportMaszynowy.Web.Controllers
 
         }
 
-        // GET: Item/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Item/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Settings setting)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
+                db.Settings.Add(setting);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
+
+            return View(setting);
+        }
+
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
             {
-                return View();
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-        }
-
-        // GET: Item/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Item/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
+            Settings setting = db.Settings.Find(id);
+            if (setting == null)
             {
-                // TODO: Add update logic here
+                return HttpNotFound();
+            }
+            return View(setting);
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Settings setting)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(setting).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(setting);
         }
 
-        // GET: Item/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Settings setting = db.Settings.Find(id);
+            if (setting == null)
+            {
+                return HttpNotFound();
+            }
+            return View(setting);
         }
 
-        // POST: Item/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            Settings setting = db.Settings.Find(id);
+            db.Settings.Remove(setting);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
-                return RedirectToAction("Index");
-            }
-            catch
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
             {
-                return View();
+                db.Dispose();
             }
+            base.Dispose(disposing);
         }
     }
 }
