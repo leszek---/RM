@@ -1037,6 +1037,9 @@
     <Content Include="Views\ItemSettings\Details.cshtml" />
     <Content Include="Views\ItemSettings\Edit.cshtml" />
     <Content Include="Views\ItemSettings\Index.cshtml" />
+    <Content Include="Views\MachineErrors\Index.cshtml" />
+    <Content Include="Views\MachineErrors\Edit.cshtml" />
+    <Content Include="Views\MachineErrors\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<RaportManager.Domian.MachineError>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            MachineError Date
+        </th>
+        <th>
+            Description
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MachineErrorDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MachineErrorID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MachineErrorID }) |
+        </td>
+    </tr>
+}
+
+</table>

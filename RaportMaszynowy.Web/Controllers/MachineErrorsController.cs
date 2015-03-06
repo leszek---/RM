@@ -3,43 +3,61 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RaportManager.Domian;
+using WebGrease.Css.Extensions;
+using System.Net;
+using System.Data.Entity;
 
 namespace RaportMaszynowy.Web.Controllers
 {
     public class MachineErrorsController : Controller
     {
-        // GET: Item
+        private Model1 db = new Model1();
+
         public ActionResult Index()
         {
-            return View();
+            return View(db.MachineError.ToList());
         }
 
-        // GET: Item/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
-        }
-
-        // GET: Item/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Item/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
+            if (id == null)
             {
-                // TODO: Add update logic here
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            MachineError error = db.MachineError.Find(id);
+            if (error == null)
+            {
+                return HttpNotFound();
+            }
+            return View(error);
+        }
 
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            MachineError error = db.MachineError.Find(id);
+            if (error == null)
+            {
+                return HttpNotFound();
+            }
+            return View(error);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(MachineError error)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(error).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(error);
         }
 
         // GET: Item/Delete/5
