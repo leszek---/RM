@@ -1,33 +1,28 @@
-﻿using System.Collections.Generic;
+﻿using RaportManager.Domian;
+using System;
 using System.Web.Http;
-using FizzWare.NBuilder;
 
 namespace RaportMaszynowy.Web.Controllers.Api
 {
     public class MachineStatusApiController : ApiController
     {
-  
         public bool GetMachineStatus()
         {
-
             var status = MvcApplication.MashineStatus;
-            return status; 
+            return status;
         }
 
-        //TODO
-        public bool SetMachineStatus(bool value)
+        public void ReportError()
         {
-            MvcApplication.MashineStatus = value;
-            //jesli wartos byla ujemna zapisz to w bazie 
-            ReportError();
-            return value;
+            using (var context = new Model1())
+            {
+                context.MachineError.Add(new MachineError()
+                {
+                    MachineErrorDate = DateTime.Now
+                });
+
+                context.SaveChanges();
+            }
         }
-
-        private void ReportError()
-        {
-            
-        }
-
-
     }
 }

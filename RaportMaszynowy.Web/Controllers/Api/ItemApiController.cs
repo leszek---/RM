@@ -1,17 +1,13 @@
-﻿using System;
+﻿using RaportManager.Domian;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using FizzWare.NBuilder;
-using RaportManager.Domian;
 
 namespace RaportMaszynowy.Web.Controllers.Api
 {
     public class ItemApiController : ApiController
     {
-
         public IEnumerable<Item> Get(DateTime? lastData)
         {
             using (var context = new Model1())
@@ -32,7 +28,6 @@ namespace RaportMaszynowy.Web.Controllers.Api
         {
             using (var context = new Model1())
             {
-
                 var dbitem = context.Item.SingleOrDefault(x => x.ItemID == id);
 
                 if (dbitem != null)
