@@ -1,27 +1,27 @@
-﻿using System;
+﻿using RaportManager.Domian;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using FizzWare.NBuilder;
-using RaportManager.Domian;
 
 namespace RaportMaszynowy.Web.Controllers.Api
 {
     public class ItemApiController : ApiController
     {
-        // GET: api/ItemApi
-        public IEnumerable<Item> Get()
+        public IEnumerable<Item> Get(DateTime? lastData)
         {
-            var items =  Builder<Item>.CreateListOfSize(10).WhereAll().Build();
-            return items; 
-        }
+            using (var context = new Model1())
+            {
+                var dbitems = context.Item.Where(x => true);
 
+                if (lastData.HasValue)
+                {
+                    dbitems = dbitems.Where(x => x.DateCreated > lastData);
+                }
 
-        public IEnumerable<Item> GetNew(DateTime date)
-        {
-            return new List<Item>();
+                var resposne = dbitems.ToList();
+                return resposne;
+            }
         }
 
         public bool ChangeStatus(int id, bool status)
@@ -37,31 +37,14 @@ namespace RaportMaszynowy.Web.Controllers.Api
             // zapiszesz 
             // ZROBIONE
 
-            return true; 
+                if (dbitem != null)
+                {
+                    dbitem.Status = status;
+                }
 
-
-
-        }
-
-        // GET: api/ItemApi/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/ItemApi
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/ItemApi/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/ItemApi/5
-        public void Delete(int id)
-        {
+                context.SaveChanges();
+                return true;
+            }
         }
     }
 }

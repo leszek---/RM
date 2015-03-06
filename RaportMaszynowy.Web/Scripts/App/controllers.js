@@ -2,30 +2,40 @@
 
     .controller('ItemController', ['$scope', '$location', '$window', '$http', function ($scope, $location, $window, $http) {
         var apiurl = "api/ItemApi";
-        init(apiurl);
+        var lastData = null;
         $scope.items = [];
-        $scope.init = false;
 
+        $interval(function () {
 
-    function changeStatus (id , status) {
         
-    }
+            $http({
+                url: apiurl,
+                method: "GET",
+                params: { lastData: lastData }
+            }).
+              success(function (data, status, headers, config) {
+
+                  $scope.items = data;
+                  for (var i = 0; i < data.length; i++) {
+                      lastData = Array.maxProp(data, 'DateCreated');
+                  }
+
+              }).
+              error(function (data, status, headers, config) {
+                  alert("Wystąpil blad.");
+              });
+
+      
+        }, 100);
 
 
-        function init(apiurl) {
+
+        init(apiurl);
 
 
-            return $http.get(apiurl).
-  success(function (data, status, headers, config) {
-
-      $scope.items = data;
-
-  }).
-  error(function (data, status, headers, config) {
-      alert("Wystąpil blad zrestartuj aplikacje");
-  });
 
 
+        function changeStatus(id, status) {
 
         }
     }])

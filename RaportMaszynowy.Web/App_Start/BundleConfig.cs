@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace RaportMaszynowy.Web
 {
@@ -27,12 +26,11 @@ namespace RaportMaszynowy.Web
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-                        bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                   "~/Scripts/angular.js",
-                   "~/Scripts/app/app.js",
-                   "~/Scripts/app/controllers.js"));
-
-
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+       "~/Scripts/angular.js",
+        "~/Scripts/app/common.js",
+       "~/Scripts/app/app.js",
+       "~/Scripts/app/controllers.js"));
         }
     }
 }
