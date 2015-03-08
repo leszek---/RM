@@ -20,7 +20,12 @@
                 </button>
             </div>
             <div class="navbar-collapse collapse">
-                @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Awarie", "Index", "MachineErrors")</li>
+                    <li>@Html.ActionLink("Charakterystyka przedmiotu","Index",  "ItemSettings")</li>
+                    <li>@Html.ActionLink("Maszyna", "Index", "Item")</li>
+                </ul>
             </div>
         </div>
     </div>

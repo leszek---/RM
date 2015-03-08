@@ -49,7 +49,7 @@ namespace RaportMaszynowy.Web.Controllers
                     var dbActiveItems = context.Settings.Where(x => x.isActive);
                     dbActiveItems.ForEach(x => x.isActive = false);
 
-                    var dbItem = context.Settings.SingleOrDefault(x => x.ItemID == id);
+                    var dbItem = context.Settings.SingleOrDefault(x => x.SettingsID == id);
                     if (dbItem != null)
                     {
                         dbItem.isActive = true;

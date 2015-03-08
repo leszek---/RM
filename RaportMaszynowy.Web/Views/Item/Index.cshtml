@@ -4,15 +4,17 @@
         ViewBag.Title = "Index";
     }
     
-    <h2>Tutaj będzie się coś wyświetlało</h2>
+    <h2>Lista wytworzonych przedmiotów</h2>
 
     <ul>
         <li ng-repeat="item in items">
-            <span>{{item.ItemID}}</span>
-            <p>{{item.DateCreated}}</p>
-            <p>{{item.Status}}</p>
-            <button>Usta Status - false</button>
-            <button>Usta Status - true</button>
+            <span>Id -{{item.ItemID}}</span>
+            <p>Data - {{item.DateCreated  | date:"MM/dd/yyyy @@ h:mma" }}</p>
+            <p>Status - {{item.Status |ItemStatus}} </p>
+            <p>Numer zmiany - {{item.ShiftNumber }} </p>
+            <p>Charakterystyka Przedmiotu -{{item.SettingsDescription }} </p>
+            <a ng-href='#here' ng-click='changeStatus(item)'>Zmień Status</a>
+           
         </li>
     </ul>
 

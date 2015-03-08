@@ -6,19 +6,16 @@ namespace RaportMaszynowy.Web.Controllers.Api
 {
     public class MachineStatusApiController : ApiController
     {
-        public bool GetMachineStatus()
-        {
-            var status = MvcApplication.MashineStatus;
-            return status;
-        }
-
+        [HttpGet]
         public void ReportError()
         {
             using (var context = new Model1())
             {
                 context.MachineError.Add(new MachineError()
                 {
-                    MachineErrorDate = DateTime.Now
+                    MachineErrorDate = DateTime.Now,
+                    Description = "Brak"
+                    
                 });
 
                 context.SaveChanges();

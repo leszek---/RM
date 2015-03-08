@@ -31,6 +31,11 @@ namespace RaportMaszynowy.Web
         "~/Scripts/app/common.js",
        "~/Scripts/app/app.js",
        "~/Scripts/app/controllers.js"));
+        
+             bundles.Add(new ScriptBundle("~/bundles/routedebugger").Include(
+       "~/Scripts/detect.js"));
         }
+
+        
     }
 }

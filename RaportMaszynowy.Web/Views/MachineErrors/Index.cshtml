@@ -4,15 +4,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Awarie</h2>
 
 <table class="table">
     <tr>
         <th>
-            MachineError Date
+            Data
         </th>
         <th>
-            Description
+            Opis
         </th>
         <th></th>
     </tr>
@@ -27,8 +27,8 @@
         </td>
 
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MachineErrorID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MachineErrorID }) |
+            @Html.ActionLink("Edycja", "Edit", new { id=item.MachineErrorID }) |
+            @Html.ActionLink("Szczegóły", "Details", new { id=item.MachineErrorID }) |
         </td>
     </tr>
 }

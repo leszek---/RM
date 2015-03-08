@@ -8,7 +8,7 @@ namespace RaportMaszynowy.Machine
     public class ApiManager
     {
         private HttpClient _client;
-        public string Url = "http://localhost:61471/";
+        public string Url = "http://localhost:244/";
 
         public ApiManager()
         {
@@ -18,21 +18,16 @@ namespace RaportMaszynowy.Machine
 
         public void SendItem(Item item)
         {
-            var response = _client.PostAsJsonAsync("api/ItemApi", item).Result;
+            var response = _client.PostAsJsonAsync("api/ItemApi/Create", item).Result;
             response.EnsureSuccessStatusCode();
         }
 
         public void ReportError()
         {
-            HttpResponseMessage response = _client.GetAsync("api/MachineStatusApiController").Result;
+            HttpResponseMessage response = _client.GetAsync("api/MachineStatusApi/ReportError").Result;
             response.EnsureSuccessStatusCode();
         }
 
-        public Settings GetTaskSettings()
-        {
-            var response = _client.GetAsync("api/ItemSettingsApi/GetActive").Result;
-            Settings settings = response.Content.ReadAsAsync<Settings>().Result;
-            return settings;
-        }
+    
     }
 }
